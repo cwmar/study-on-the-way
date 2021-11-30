@@ -3,7 +3,7 @@ bbb
 i love u
 cccc
 i hate u
-a
+set number
 zzzz
 
 edit by hot_fix
