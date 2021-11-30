@@ -2,5 +2,8 @@ aaa
 bbb
 i love u
 cccc
+i hate u
 a
 zzzz
+
+edit by hot_fix
