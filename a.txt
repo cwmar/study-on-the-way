@@ -1,9 +1,1 @@
-aaa
-bbb
-i love u
-cccc
-i hate u
-set number
-zzzz
-
-edit by hot_fix
+a b c and d
