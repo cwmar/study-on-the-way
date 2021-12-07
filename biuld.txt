@@ -1,0 +1,61 @@
+package(default_visibility = [ "//visibility:public" ])
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_test")
+load("@xpilot_build_tools//:fast_idl_rules.bzl", "idl_library")
+load("@xpilot_build_tools//:globals.bzl", "global_definitions")
+global_definitions()
+
+cc_binary(
+    name = "writer",
+    srcs = [ "normal_usage/writer.cpp" ],
+    deps = [
+        "//xdds:xdds",
+        ":examples_idl",
+    ],
+)
+
+cc_binary(
+    name = "reader",
+    srcs = [ "normal_usage/reader.cpp" ],
+    deps = [
+        "//xdds:xdds",
+        ":examples_idl",
+    ],
+)
+
+cc_binary(
+    name = "listener_reader",
+    srcs = [ "async_read_via_listener/listener_reader.cpp" ],
+    deps = [
+        "//xdds:xdds",
+        ":examples_idl",
+    ],
+
+    
+cc_binary(
+    name = "listener_writer",
+    srcs = [ "async_read_via_listener/writer.cpp" ],
+    deps = [
+        "//xdds:xdds",
+        ":examples_idl",
+    ],
+)
+
+cc_binary(
+    name = "condition_reader",
+    srcs = [ "sync_read_via_waitset/cond_reader.cpp" ],
+    deps = [
+        "//xdds:xdds",
+        ":examples_idl",
+        "//xdds/common:duration",
+        "//xdds/core/cond:waitset"
+    ],
+)
+
+cc_binary(
+    name = "readcond_reader",
+    srcs = [ "sync_read_via_waitset/readcond_reader.cpp" ],
+    deps = [
+        "//xdds:xdds",
+        ":examples_idl",
+    ],
+)
